@@ -23,3 +23,15 @@ export function completeAll() {
 export function clearCompleted() {
     return {type: types.CLEAR_COMPLETED};
 }
+
+export function login() {
+    return {type: types.LOGIN, succees: true};
+}
+
+export function inputID(id) {
+    return {type: types.INPUT_ID, id};
+}
+
+export function inputPass(pass) {
+    return {type: types.INPUT_PASS, pass};
+}

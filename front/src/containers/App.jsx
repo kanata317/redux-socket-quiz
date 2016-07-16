@@ -2,28 +2,27 @@ import React, {Component, PropTypes} from "react";
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Header from '../components/Header';
-import MainSection from '../components/MainSection';
+import MainSection from '../components/LoginSection';
 import * as TodoActions from '../actions/todos';
 
 class App extends Component {
     render() {
-        const {todos, actions} = this.props;
+        const {inputValue, actions} = this.props;
         return (
             <div>
-                <Header addTodo={actions.addTodo}/>
-                <MainSection todos={todos} actions={actions}/>
+                <MainSection inputValue={inputValue} actions={actions}/>
             </div>
         );
     }
 }
 
 App.propTypes = {
-    todos: PropTypes.array.isRequired,
+    inputValue: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
-    return {todos: state.todos};
+    return {inputValue: state.login};
 }
 
 function mapDispatchToProps(dispatch) {
