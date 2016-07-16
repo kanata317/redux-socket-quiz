@@ -5,5 +5,7 @@ export const COMPLETE_TODO = 'COMPLETE_TODO';
 export const COMPLETE_ALL = 'COMPLETE_ALL';
 export const CLEAR_COMPLETED = 'CLEAR_COMPLETED';
 export const LOGIN = 'LOGIN';
+export const SUCCEES_LOGIN = 'SUCCEES_LOGIN';
+export const FAIL_LOGIN = 'FAIL_LOGIN';
 export const INPUT_ID = 'INPUT_ID';
 export const INPUT_PASS = 'INPUT_PASS';

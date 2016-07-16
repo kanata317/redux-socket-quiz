@@ -24,8 +24,15 @@ export function clearCompleted() {
     return {type: types.CLEAR_COMPLETED};
 }
 
-export function login() {
-    return {type: types.LOGIN, succees: true};
+export function login(id, pass) {
+    return {type: types.LOGIN, id, pass};
+}
+
+export function succeesLogin() {
+    return {type: types.SUCCEES_LOGIN};
+}
+export function failLogin() {
+    return {type: types.FAIL_LOGIN};
 }
 
 export function inputID(id) {
