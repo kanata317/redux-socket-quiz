@@ -1,6 +1,5 @@
 .DS_STORE
 node_modules
-static
+public
 .module-cache
 *.log*
-
