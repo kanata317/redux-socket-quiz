@@ -1,7 +1,7 @@
 import * as types from '../constants/ActionTypes';
 import {call, fork, put, take} from 'redux-saga/effects';
 import * as api from '../api/login';
-import {succeesLogin, failLogin} from '../actions/todos';
+import {succeesLogin, failLogin} from '../actions/actions';
 
 function * handleRequestLogin() {
     while (true) {

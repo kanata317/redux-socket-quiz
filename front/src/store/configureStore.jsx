@@ -1,14 +1,16 @@
 import {createStore, applyMiddleware, compose} from 'redux';
-import rootReducer from '../reducers';
+import {routerMiddleware, push} from 'react-router-redux'
 import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger'
+import rootReducer from '../reducers';
 import loginSaga from '../saga/login';
 
-export default function configureStore(initialState) {
+export default function configureStore(initialState, history) {
     const sagaMiddleware = createSagaMiddleware();
-    const store = createStore(rootReducer, initialState, compose(applyMiddleware(sagaMiddleware, logger())), window.devToolsExtension
+    const middleware = [sagaMiddleware, logger(), routerMiddleware(history)];
+    const store = createStore(rootReducer, initialState, compose(applyMiddleware(...middleware), window.devToolsExtension
         ? window.devToolsExtension()
-        : f => f);
+        : f => f));
     sagaMiddleware.run(loginSaga);
 
     if (module.hot) {

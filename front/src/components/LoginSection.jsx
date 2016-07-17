@@ -7,7 +7,7 @@ class LoginSection extends Component {
     }
 
     login() {
-        this.props.actions.login(this.props.inputValue.id, this.props.inputValue.pass);
+        this.props.actions.login(this.props.values.id, this.props.values.pass);
     }
 
     inputID(e) {
@@ -24,23 +24,24 @@ class LoginSection extends Component {
 
     render() {
         return (
-            <section>
+            <article>
+                <h2>LOGIN</h2>
                 <div>
-                    <TextField floatingLabelText="ID" value={this.props.inputValue.id} onChange={this.inputID.bind(this)}></TextField>
+                    <TextField floatingLabelText="ID" value={this.props.values.id} onChange={this.inputID.bind(this)}></TextField>
                 </div>
                 <div>
-                    <TextField floatingLabelText="PASS" type="password" value={this.props.inputValue.pass} onChange={this.inputPass.bind(this)}></TextField>
+                    <TextField floatingLabelText="PASS" type="password" value={this.props.values.pass} onChange={this.inputPass.bind(this)}></TextField>
                 </div>
                 <div>
                     <RaisedButton label="Login" primary={true} onTouchTap={this.login.bind(this)}></RaisedButton>
                 </div>
-            </section>
+            </article>
         );
     }
 }
 
 LoginSection.propTypes = {
-    inputValue: PropTypes.object.isRequired,
+    values: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired
 };
 

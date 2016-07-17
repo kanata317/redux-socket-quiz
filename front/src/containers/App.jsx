@@ -1,34 +1,35 @@
 import React, {Component, PropTypes} from "react";
-import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
+// import {bindActionCreators} from 'redux';
+// import {connect} from 'react-redux';
 import Header from '../components/Header';
-import MainSection from '../components/LoginSection';
-import * as TodoActions from '../actions/todos';
 
 class App extends Component {
+    constructor(props, context) {
+        super(props, context);
+        console.log(props);
+    }
+
     render() {
-        const {inputValue, actions} = this.props;
         return (
             <div>
-                <MainSection inputValue={inputValue} actions={actions}/>
+                <Header/> {this.props.children}
             </div>
         );
     }
 }
 
 App.propTypes = {
-    inputValue: PropTypes.object.isRequired,
-    actions: PropTypes.object.isRequired
+    children: PropTypes.object
 };
 
-function mapStateToProps(state) {
-    return {inputValue: state.login};
-}
+// function mapStateToProps(state, ownProps) {
+//     return {values: ownProps};
+// }
+//
+// function mapDispatchToProps(dispatch) {
+//     return {
+//         actions: bindActionCreators(Actions, dispatch)
+//     };
+// }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        actions: bindActionCreators(TodoActions, dispatch)
-    };
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
