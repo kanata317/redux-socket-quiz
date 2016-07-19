@@ -1,3 +1,4 @@
+path = require('path');
 module.exports = {
   context: __dirname + "/front/src",
   entry: {
@@ -5,11 +6,15 @@ module.exports = {
     css: "./main.css",
     html: "./index.html"
   },
-
   output: {
     path: __dirname + "/public",
     filename: "bundle.js"
   },
+  resolve: {
+    alias: {
+      react: path.resolve('./node_modules/react')
+    }
+},
   module: {
     preLoaders: [
         //Eslint loader

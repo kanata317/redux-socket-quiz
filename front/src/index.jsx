@@ -8,6 +8,9 @@ import {syncHistoryWithStore} from 'react-router-redux'
 import App from './containers/App'
 import Home from './containers/Home'
 import Login from './containers/Login'
+import Room from './containers/Room'
+import CreateRoom from './containers/CreateRoom'
+
 import configureStore from './store/configureStore';
 
 //Needed for React Developer Tools
@@ -30,6 +33,8 @@ ReactDOM.render(
         <Route path="/" component={App}>
             <IndexRoute component={Home}/>
             <Route path="login" component={Login}/>
+            <Route path="room" component={Room}/>
+            <Route path="createRoom" component={CreateRoom}/>
         </Route>
     </Router>
 </Provider>, document.getElementById("root"));

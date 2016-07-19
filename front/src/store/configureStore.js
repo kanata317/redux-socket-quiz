@@ -3,7 +3,7 @@ import {routerMiddleware, push} from 'react-router-redux'
 import createSagaMiddleware from 'redux-saga';
 import logger from 'redux-logger'
 import rootReducer from '../reducers';
-import loginSaga from '../saga/login';
+import rootSaga from '../saga/index';
 
 export default function configureStore(initialState, history) {
     const sagaMiddleware = createSagaMiddleware();
@@ -11,7 +11,7 @@ export default function configureStore(initialState, history) {
     const store = createStore(rootReducer, initialState, compose(applyMiddleware(...middleware), window.devToolsExtension
         ? window.devToolsExtension()
         : f => f));
-    sagaMiddleware.run(loginSaga);
+    sagaMiddleware.run(rootSaga);
 
     if (module.hot) {
         // Enable Webpack hot module replacement for reducers

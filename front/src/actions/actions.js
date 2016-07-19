@@ -42,3 +42,24 @@ export function inputID(id) {
 export function inputPass(pass) {
     return {type: types.INPUT_PASS, pass};
 }
+
+export function openRoomDialog(roomId) {
+    return {type: types.OPEN_ROOM_DIALOG, roomId};
+}
+
+export function closeRoomDialog() {
+    return {type: types.CLOSE_ROOM_DIALOG};
+}
+export function fetchRooms() {
+    return {type: types.FETCH_ROOMS};
+}
+export function fetchQuizTypes() {
+    return {type: types.FETCH_QUIZ_TYPES};
+}
+export function changeQuizType(quizId) {
+    return {type: types.CHANGE_QUIZ_TYPE, quizId};
+}
+
+export function inputRoomName(roomName) {
+    return {type: types.INPUT_ROOM_NAME, roomName};
+}
