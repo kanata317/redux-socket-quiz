@@ -10,6 +10,7 @@ import Home from './containers/Home'
 import Login from './containers/Login'
 import Room from './containers/Room'
 import CreateRoom from './containers/CreateRoom'
+import Quiz from './containers/Quiz'
 
 import configureStore from './store/configureStore';
 
@@ -35,6 +36,7 @@ ReactDOM.render(
             <Route path="login" component={Login}/>
             <Route path="room" component={Room}/>
             <Route path="createRoom" component={CreateRoom}/>
+            <Route path="quiz" component={Quiz}/>
         </Route>
     </Router>
 </Provider>, document.getElementById("root"));

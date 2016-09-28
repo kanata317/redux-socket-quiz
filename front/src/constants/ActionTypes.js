@@ -15,3 +15,7 @@ export const FETCH_ROOMS = 'FETCH_ROOMS';
 export const FETCH_QUIZ_TYPES = 'FETCH_QUIZ_TYPES';
 export const CHANGE_QUIZ_TYPE = 'CHANGE_QUIZ_TYPE';
 export const INPUT_ROOM_NAME = 'INPUT_ROOM_NAME';
+export const ANSWER = 'ANSWER';
+export const WAIT = 'WAIT';
+export const NEXT_QUIZ = 'NEXT_QUIZ';
+export const CHECK_ANSWER = 'CHECK_ANSWER';

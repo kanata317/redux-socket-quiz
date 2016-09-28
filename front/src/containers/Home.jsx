@@ -13,7 +13,8 @@ class Home extends Component {
                 <h2>HOME</h2>
                 <Paper>
                     <Menu>
-                        <MenuItem primaryText="Room" leftIcon={< Group />} onTouchTap={() => browserHistory.push('room')}/>
+                        <MenuItem primaryText="Room" leftIcon={<Group/>} onTouchTap={() => browserHistory.push('room')}/>
+                        <MenuItem primaryText="Quiz" leftIcon={<Group/>} onTouchTap={() => browserHistory.push('quiz')}/>
                     </Menu>
                 </Paper>
             </article >

@@ -3,7 +3,7 @@ import {call, fork, put, take} from 'redux-saga/effects';
 import * as api from '../api/room';
 import {putRooms} from '../actions/actions';
 
-function * handleFetchRooms() {
+function* handleFetchRooms() {
     while (true) {
         const action = yield take(types.FETCH_ROOMS);
         const {payload, error} = yield call(api.fetchRooms);
@@ -15,6 +15,6 @@ function * handleFetchRooms() {
     }
 }
 
-export default function * fetchRooms() {
-    yield fork(handleRequestLogin);
+export default function* fetchRooms() {
+    yield fork(handleFetchRooms);
 }

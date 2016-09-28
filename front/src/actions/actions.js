@@ -63,3 +63,19 @@ export function changeQuizType(quizId) {
 export function inputRoomName(roomName) {
     return {type: types.INPUT_ROOM_NAME, roomName};
 }
+
+export function answer(answerId) {
+    return {type: types.ANSWER,answerId};
+}
+
+export function nextQuiz() {
+    return {type: types.NEXT_QUIZ};
+}
+
+export function wait() {
+    return {type: types.WAIT};
+}
+
+export function checkAnswer(checkAnswer) {
+    return {type: types.CHECK_ANSWER, checkAnswer};
+}
